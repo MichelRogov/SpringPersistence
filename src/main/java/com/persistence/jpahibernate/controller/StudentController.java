@@ -1,7 +1,7 @@
 package com.persistence.jpahibernate.controller;
 
 import com.persistence.jpahibernate.exception.StudentNotFoundException;
-import com.persistence.jpahibernate.model.Student;
+import com.persistence.jpahibernate.model.student.Student;
 import com.persistence.jpahibernate.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

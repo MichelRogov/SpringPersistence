@@ -1,6 +1,6 @@
 package com.persistence.jpahibernate.repository;
 
-import com.persistence.jpahibernate.model.Student;
+import com.persistence.jpahibernate.model.student.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

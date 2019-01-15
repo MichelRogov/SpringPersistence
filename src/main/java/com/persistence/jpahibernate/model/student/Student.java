@@ -1,4 +1,4 @@
-package com.persistence.jpahibernate.model;
+package com.persistence.jpahibernate.model.student;
 
 import lombok.Data;
 
