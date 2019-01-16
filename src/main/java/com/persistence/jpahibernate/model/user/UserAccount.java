@@ -19,8 +19,9 @@ public class UserAccount {
     @OneToOne
     private User user;
 
-    @Column(name = "ACCOUNT_STATUS_ID", nullable = false)
-    private Integer statusId;
+    @Column(name = "ACCOUNT_STATUS", nullable = false)
+    @Convert(converter = AccountStatusConverter.class)
+    private AccountStatus accountStatus;
 
     @OneToOne
     private Language language;

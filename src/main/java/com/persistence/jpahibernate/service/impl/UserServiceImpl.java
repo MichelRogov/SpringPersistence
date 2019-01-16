@@ -29,6 +29,13 @@ public class UserServiceImpl implements UserService {
         User user = saveUser(userWeb);
         saveUserAccount(user, userWeb);
     }
+    
+    @Override
+    public UserInfoWebResponse findUserAccountByEmail(String email) {
+//        User user = userRepository.findByEmail(email);
+//        return userAccountRepository.findByUserEmail(email);
+        return userAccountRepository.getUserInfoByEmailCustom(email);
+    }
 
     private User saveUser(UserWebDto userWebDto) {
         User user = new User();
@@ -43,7 +50,7 @@ public class UserServiceImpl implements UserService {
     private void saveUserAccount(User user, UserWebDto userWebDto) {
         UserAccount userAccount = new UserAccount();
         userAccount.setUser(user);
-        userAccount.setStatusId(AccountStatus.NEW.getId());
+        userAccount.setAccountStatus(AccountStatus.NEW);
 
         Optional<Language> optionalLanguage = languageRepository.findById(userWebDto.getLanguageId());
         if (!optionalLanguage.isPresent()){
